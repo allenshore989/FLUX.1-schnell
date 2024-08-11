@@ -35,7 +35,7 @@ The FLUX.1 models are also available via API from the following sources
 To use `FLUX.1 [schnell]` with the 🧨 diffusers python library, first install or upgrade diffusers
 
 ```shell
-pip install git+https://github.com/huggingface/diffusers.git
+pip install -U diffusers
 ```
 
 Then you can use `FluxPipeline` to run the model
@@ -51,7 +51,6 @@ prompt = "A cat holding a sign that says hello world"
 image = pipe(
     prompt,
     guidance_scale=0.0,
-    output_type="pil",
     num_inference_steps=4,
     max_sequence_length=256,
     generator=torch.Generator("cpu").manual_seed(0)
